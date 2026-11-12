@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MARIANO WEB AGENCY accompagne les entreprises dans la création de sites web professionnels et leur développement numérique.">
+<meta name="theme-color" content="#101d2b">
+<title>MARIANO WEB AGENCY | Création de sites web</title>
+
+<style>
+:root {
+  --navy:#101d2b;
+  --green:#16a477;
+  --gold:#d6ae65;
+  --white:#ffffff;
+  --muted:#aab6c2;
+  --bg:#f5f8fa;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  line-height:1.65;
+}
+a {text-decoration:none;color:inherit}
+.container {width:min(1100px,90%);margin:auto}
+header {
+  background:var(--navy);
+  color:white;
+  position:sticky;top:0;z-index:10;
+}
+nav {
+  min-height:75px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+.logo {font-weight:900;font-size:19px;line-height:1.2}
+.logo span {color:#22c993}
+.navlinks {display:flex;gap:22px;font-size:14px}
+.navlinks a:hover {color:#22c993}
+.menu {
+  display:none;background:none;color:white;
+  border:1px solid #52606c;border-radius:7px;
+  padding:8px 12px;font-size:20px;
+}
+.hero {
+  background:linear-gradient(135deg,#101d2b,#183c43);
+  color:white;padding:100px 0 110px;
+}
+.tag {
+  color:#35d5a2;font-size:12px;
+  letter-spacing:2px;font-weight:bold;
+}
+.hero h1 {
+  font-size:clamp(35px,7vw,64px);
+  line-height:1.12;margin:20px 0;
+  max-width:800px;
+}
+.hero h1 span {color:#27c795}
+.hero p {color:#d0dbe2;max-width:620px}
+.actions {display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn {
+  display:inline-block;padding:13px 21px;
+  border-radius:7px;font-weight:bold;
+  background:var(--green);color:white;
+}
+.btn:hover {opacity:.88}
+.btn-outline {
+  border:1px solid #ffffff80;background:transparent;
+}
+section {padding:75px 0}
+.section-title {text-align:center;margin-bottom:40px}
+.section-title h2 {font-size:32px;margin-bottom:8px}
+.section-title p {color:#697786}
+.services {
+  background:var(--bg);
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card {
+  background:white;padding:27px;
+  border-radius:12px;border:1px solid #e7edf0;
+}
+.card .symbol {font-size:30px}
+.card h3 {margin:13px 0 8px}
+.card p {color:#687786;font-size:14px}
+.about-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:45px;align-items:center;
+}
+.about-panel {
+  background:var(--navy);color:white;
+  padding:35px;border-radius:15px;
+}
+.about-panel p {color:#d0dbe2}
+.points {margin-top:20px;list-style:none}
+.points li {margin:10px 0}
+.points li::before {content:"✓ ";color:#27c795;font-weight:bold}
+.portfolio {background:var(--bg)}
+.project {
+  padding:30px;border-radius:12px;
+  background:linear-gradient(135deg,#173b45,#101d2b);
+  color:white;min-height:180px;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+}
+.project small {color:#35d5a2}
+.project p {color:#d0dbe2;font-size:14px}
+.process {
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+.step {padding:20px;border-left:3px solid var(--green)}
+.step strong {font-size:25px;color:var(--green)}
+.contact {
+  background:var(--navy);color:white;
+}
+.contact .section-title p {color:#c2ccd5}
+.contact-box {
+  max-width:650px;margin:auto;text-align:center;
+}
+.contact-box p {color:#d0dbe2}
+footer {
+  background:#0b1520;color:#aab6c2;
+  padding:25px 0;text-align:center;font-size:13px;
+}
+@media(max-width:750px) {
+  .menu {display:block}
+  .navlinks {
+    display:none;position:absolute;top:75px;
+    left:0;width:100%;background:var(--navy);
+    flex-direction:column;padding:20px 5%;
+  }
+  .navlinks.open {display:flex}
+  .cards {grid-template-columns:1fr}
+  .about-grid {grid-template-columns:1fr}
+  .process {grid-template-columns:1fr 1fr}
+  .hero {padding:75px 0}
+}
+@media(max-width:400px) {
+  .process {grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#accueil" class="logo">
+        MARIANO<br><span>WEB AGENCY</span>
+      </a>
+      <button class="menu" id="menu" aria-label="Ouvrir le menu">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="container">
+    <div class="tag">VOTRE PARTENAIRE DIGITAL</div>
+    <h1>Votre entreprise mérite une présence <span>exceptionnelle</span> sur Internet.</h1>
+    <p>
+      Nous concevons des sites web modernes, élégants et
+      adaptés aux besoins des entreprises qui souhaitent
+      développer leur visibilité et attirer de nouveaux clients.
+    </p>
+    <div class="actions">
+      <a href="#contact" class="btn">Demander un devis</a>
+      <a href="#services" class="btn btn-outline">Nos services</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nos services</h2>
+      <p>Des solutions numériques adaptées à votre activité.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="symbol">🌐</div>
+        <h3>Site vitrine</h3>
+        <p>Présentez votre entreprise, vos services et vos coordonnées avec un site professionnel.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">🛒</div>
+        <h3>Site e-commerce</h3>
+        <p>Développez votre boutique en ligne et permettez à vos clients de découvrir vos produits.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">🚀</div>
+        <h3>Landing page</h3>
+        <p>Une page attractive conçue pour présenter une offre et encourager les prises de contact.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">📱</div>
+        <h3>Design responsive</h3>
+        <p>Des interfaces qui s'adaptent aux smartphones, tablettes et ordinateurs.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">⚙️</div>
+        <h3>Maintenance web</h3>
+        <p>Suivi technique, corrections, mises à jour et amélioration de votre site.</p>
+      </article>
+      <article class="card">
+        <div class="symbol">✨</div>
+        <h3>Refonte de site</h3>
+        <p>Modernisez votre ancien site pour offrir une meilleure expérience à vos visiteurs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="apropos">
+  <div class="container about-grid">
+    <div>
+      <div class="tag">À PROPOS DE NOUS</div>
+      <h2 style="font-size:32px;margin:15px 0">
+        Le numérique au service de votre ambition.
+      </h2>
+      <p>
+        MARIANO WEB AGENCY est une agence indépendante
+        spécialisée dans la création de solutions web
+        pour les professionnels et les entreprises.
+      </p>
+      <ul class="points">
+        <li>Des designs modernes et soignés</li>
+        <li>Une approche adaptée à chaque projet</li>
+        <li>Des sites accessibles sur mobile</li>
+        <li>Un accompagnement personnalisé</li>
+      </ul>
+    </div>
+    <div class="about-panel">
+      <h2>Notre engagement</h2>
+      <p style="margin-top:15px">
+        Comprendre votre activité, valoriser votre image
+        et créer une présence digitale qui répond
+        réellement à vos objectifs.
+      </p>
+      <p style="margin-top:20px;color:#35d5a2;font-weight:bold">
+        Votre vision, notre expertise, votre réussite numérique.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="realisations">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nos démonstrations</h2>
+      <p>Quelques exemples de projets que nous pouvons réaliser.</p>
+    </div>
+    <div class="cards">
+      <article class="project">
+        <small>PROJET DÉMONSTRATION</small>
+        <h3>Restaurant & Gastronomie</h3>
+        <p>Présentation, menu et réservation.</p>
+      </article>
+      <article class="project">
+        <small>PROJET DÉMONSTRATION</small>
+        <h3>Immobilier</h3>
+        <p>Présentation de biens et demandes de visite.</p>
+      </article>
+      <article class="project">
+        <small>PROJET DÉMONSTRATION</small>
+        <h3>Entreprise de services</h3>
+        <p>Présentation des prestations et contact client.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>Comment travaillons-nous ?</h2>
+      <p>Un processus simple et transparent.</p>
+    </div>
+    <div class="process">
+      <div class="step"><strong>01</strong><h3>Échange</h3><p>Nous étudions vos besoins.</p></div>
+      <div class="step"><strong>02</strong><h3>Conception</h3><p>Nous préparons votre projet.</p></div>
+      <div class="step"><strong>03</strong><h3>Réalisation</h3><p>Nous développons votre site.</p></div>
+      <div class="step"><strong>04</strong><h3>Livraison</h3><p>Nous testons et publions le site.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-box">
+    <div class="section-title">
+      <h2>Parlons de votre projet</h2>
+      <p>Vous avez une idée ? Donnons-lui vie ensemble.</p>
+    </div>
+    <p>
+      Contactez MARIANO WEB AGENCY pour discuter
+      de votre prochain projet numérique.
+    </p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn" id="whatsapp" href="#">Nous contacter sur WhatsApp</a>
+      <a class="btn btn-outline" href="mailto:VOTRE_EMAIL">Envoyer un e-mail</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> MARIANO WEB AGENCY.
+    Tous droits réservés.
+    <br>Votre vision, notre expertise, votre réussite numérique.
+  </div>
+</footer>
+
+<script>
+const menu = document.getElementById("menu");
+const links = document.getElementById("navlinks");
+
+menu.addEventListener("click", () => {
+  links.classList.toggle("open");
+});
+
+links.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => links.classList.remove("open"));
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// À REMPLACER par ton numéro WhatsApp international.
+// Exemple : 229XXXXXXXX, sans + ni espaces.
+const whatsappNumber = "229XXXXXXXX";
+
+document.getElementById("whatsapp").href =
+  "https://wa.me/" + whatsappNumber +
+  "?text=" + encodeURIComponent(
+    "Bonjour MARIANO WEB AGENCY, je souhaite obtenir un devis pour un site web."
+  );
+</script>
+</body>
+</html>
